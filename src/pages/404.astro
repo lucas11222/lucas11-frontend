@@ -1,0 +1,15 @@
+---
+import Logo from "@/assets/logo.svg";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout>
+  <div class="flex items-center justify-center h-screen w-screen flex-col">
+    <p class="text-center text-xl">404! Go to home or check the link.</p>
+    <Button asChild variant="outline">
+      <a href="/">Go to home.</a>
+    </Button>
+  </div>
+</Layout>
