@@ -25,7 +25,9 @@ export const prerender = false;
 ---
 
 <Layout title="Sign in">
-  <div class="flex items-center justify-center h-screen w-screen flex-col">
+  <div
+    class="flex items-center justify-center h-screen w-screen flex-col scrollbar-hide"
+  >
     <Card className="w-100">
       <CardHeader>
         <CardTitle className="text-center text-3xl">Sign in</CardTitle>
@@ -39,6 +41,10 @@ export const prerender = false;
           <Input type="email" name="email" id="email" />
           <Label htmlFor="password">Password</Label>
           <Input type="password" name="password" id="password" />
+        </form>
+      </CardContent>
+      <CardFooter>
+        <form action="/api/signin" method="post">
           <Button type="submit"><Mail /> Login with Email</Button>
           <Button value="github" name="provider" type="submit"
             >Sign in with GitHub.</Button
@@ -47,7 +53,7 @@ export const prerender = false;
             >Sign in with Discord.</Button
           >
         </form>
-      </CardContent>
+      </CardFooter>
     </Card>
   </div>
 </Layout>

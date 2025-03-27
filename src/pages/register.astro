@@ -24,7 +24,9 @@ export const prerender = false;
 ---
 
 <Layout title="Register">
-  <div class="flex items-center justify-center h-screen w-screen flex-col">
+  <div
+    class="flex items-center justify-center h-screen w-screen flex-col scrollbar-hide"
+  >
     <Card className="w-100">
       <CardHeader>
         <CardTitle className="text-center text-3xl">Register</CardTitle>
@@ -42,6 +44,11 @@ export const prerender = false;
           <Button type="submit" className="">Register</Button>
         </form>
       </CardContent>
+      <CardFooter>
+        <form action="/api/register" method="post">
+          <Button type="submit" className="">Register</Button>
+        </form>
+      </CardFooter>
     </Card>
   </div>
 </Layout>

@@ -48,7 +48,9 @@ export const prerender = false;
 ---
 
 <Layout>
-  <div class="flex items-center justify-center h-screen w-screen flex-col">
+  <div
+    class="flex items-center justify-center h-screen w-screen flex-col scrollbar-hide"
+  >
     <Card className="w-100">
       <CardHeader>
         <CardTitle className="text-center text-3xl">Settings</CardTitle>
@@ -64,11 +66,11 @@ export const prerender = false;
         <p class="text-center text-xl">User name.</p>
         <p class="text-center text-xs">{user}</p>
       </CardContent>
-      <CardContent>
+      <CardFooter>
         <form action="/api/signout">
           <Button type="submit">Sign out</Button>
         </form>
-      </CardContent>
+      </CardFooter>
     </Card>
   </div>
 </Layout>

@@ -1,6 +1,7 @@
 ---
-import MySidebar from "@/components/ui/my-sidebar"
+import MySidebar from "@/components/ui/my-sidebar";
 import "@styles/global.css";
+import Posthog from "@components/posthog.astro";
 ---
 
 <!doctype html>
@@ -12,9 +13,9 @@ import "@styles/global.css";
     <meta name="generator" content={Astro.generator} />
     <title>hi - Lucas11</title>
     <script>
-      // Asegurar que el modo oscuro se mantenga antes de que cargue la página
       document.documentElement.classList.add("dark");
     </script>
+    <Posthog />
   </head>
   <body>
     <MySidebar client:load>
