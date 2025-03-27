@@ -2,6 +2,8 @@
 import MySidebar from "@/components/ui/my-sidebar";
 import "@styles/global.css";
 import Posthog from "@components/posthog.astro";
+
+const { title = "Lucas11", ...props } = Astro.props;
 ---
 
 <!doctype html>
@@ -11,10 +13,21 @@ import Posthog from "@components/posthog.astro";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>hi - Lucas11</title>
+    <title>{title}</title>
+    <meta name="description" content="Lucas11's Website :)" />
+    <meta property="og:title" content="Lucas11" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lucas11.vercel.app/" />
+    <meta property="og:description" content="Lucas11's Website :)" />
+    <meta property="og:image" content="/logo.svg" />
+    <meta
+      name="google-site-verification"
+      content="JO7fFs2whWWX5QLCGXBenEh_tvb41baW0KsQrXyPkDw"
+    />
     <script>
       document.documentElement.classList.add("dark");
     </script>
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <Posthog />
   </head>
   <body>

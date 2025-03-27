@@ -11,6 +11,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarTrigger,
 } from "@/components/ui/sidebar";
 import {
   DropdownMenu,
@@ -19,6 +20,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+const isEnabled = true;
 const helloworld = [
   {
     title: "Home",
@@ -46,6 +48,7 @@ export function AppSidebar() {
     <>
       <Sidebar>
         <SidebarHeader>
+          <SidebarTrigger />
           <SidebarMenu>
             <SidebarMenuItem className="flex flex-row justify-center">
               <img
