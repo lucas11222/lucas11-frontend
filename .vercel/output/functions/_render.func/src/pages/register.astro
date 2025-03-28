@@ -1,0 +1,54 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+
+const { cookies, redirect } = Astro;
+
+const accessToken = cookies.get("sb-access-token");
+const refreshToken = cookies.get("sb-refresh-token");
+
+if (accessToken && refreshToken) {
+  return redirect("/settings");
+}
+export const prerender = false;
+---
+
+<Layout title="Register">
+  <div
+    class="flex items-center justify-center h-screen w-screen flex-col scrollbar-hide"
+  >
+    <Card className="w-100">
+      <CardHeader>
+        <CardTitle className="text-center text-3xl">Register</CardTitle>
+        <CardDescription className="text-center"
+          >Already have an account? <a href="/signin">Sign in</a
+          ></CardDescription
+        >
+      </CardHeader>
+      <CardContent>
+        <form action="/api/register" method="post">
+          <Label htmlFor="email">Email</Label>
+          <Input type="email" name="email" id="email" />
+          <Label htmlFor="password">Password</Label>
+          <Input type="password" name="password" id="password" />
+          <Button type="submit" className="">Register</Button>
+        </form>
+      </CardContent>
+      <CardFooter>
+        <form action="/api/register" method="post">
+          <Button type="submit" className="">Register</Button>
+        </form>
+      </CardFooter>
+    </Card>
+  </div>
+</Layout>

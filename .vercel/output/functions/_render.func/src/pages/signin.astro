@@ -1,0 +1,59 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Mail } from "lucide-react";
+import { Github } from "lucide-react";
+const { cookies, redirect } = Astro;
+
+const accessToken = cookies.get("sb-access-token");
+const refreshToken = cookies.get("sb-refresh-token");
+
+if (accessToken && refreshToken) {
+  return redirect("/dashboard");
+}
+export const prerender = false;
+---
+
+<Layout title="Sign in">
+  <div
+    class="flex items-center justify-center h-screen w-screen flex-col scrollbar-hide"
+  >
+    <Card className="w-100">
+      <CardHeader>
+        <CardTitle className="text-center text-3xl">Sign in</CardTitle>
+        <CardDescription className="text-center"
+          >New here? <a href="/register">Create an account</a></CardDescription
+        >
+      </CardHeader>
+      <CardContent>
+        <form action="/api/signin" method="post">
+          <Label htmlFor="email">Email</Label>
+          <Input type="email" name="email" id="email" />
+          <Label htmlFor="password">Password</Label>
+          <Input type="password" name="password" id="password" />
+        </form>
+      </CardContent>
+      <CardFooter>
+        <form action="/api/signin" method="post">
+          <Button type="submit"><Mail /> Login with Email</Button>
+          <Button value="github" name="provider" type="submit"
+            >Sign in with GitHub.</Button
+          >
+          <Button value="discord" name="provider" type="submit"
+            >Sign in with Discord.</Button
+          >
+        </form>
+      </CardFooter>
+    </Card>
+  </div>
+</Layout>
