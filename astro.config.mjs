@@ -9,14 +9,17 @@ import vercel from '@astrojs/vercel';
 
 import mdx from '@astrojs/mdx';
 
+import sitemap from '@astrojs/sitemap';
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
+  site: 'https://lucas11.vercel.app',
+  
 
-
-  integrations: [react()],
+  integrations: [react(), sitemap()],
   adapter: vercel()
 });
 

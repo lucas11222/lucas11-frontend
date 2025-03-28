@@ -12,6 +12,7 @@
     "@astrojs/check": "^0.9.4",
     "@astrojs/mdx": "^4.2.1",
     "@astrojs/react": "^4.2.1",
+    "@astrojs/sitemap": "^3.3.0",
     "@astrojs/ts-plugin": "^1.10.4",
     "@astrojs/vercel": "^8.1.2",
     "@radix-ui/react-alert-dialog": "^1.1.6",
