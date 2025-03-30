@@ -12,12 +12,11 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Mail } from "lucide-react";
-import { Github } from "lucide-react";
 const { cookies, redirect } = Astro;
 
 const accessToken = cookies.get("sb-access-token");
 const refreshToken = cookies.get("sb-refresh-token");
-
+import { Github, Discord } from "simple-icons-astro";
 if (accessToken && refreshToken) {
   return redirect("/dashboard");
 }
@@ -43,14 +42,14 @@ export const prerender = false;
           <Input type="password" name="password" id="password" />
         </form>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="flex justify-between">
         <form action="/api/signin" method="post">
           <Button type="submit"><Mail /> Login with Email</Button>
           <Button value="github" name="provider" type="submit"
-            >Sign in with GitHub.</Button
+            ><Github />Sign in with GitHub.</Button
           >
           <Button value="discord" name="provider" type="submit"
-            >Sign in with Discord.</Button
+            ><Discord />Sign in with Discord.</Button
           >
         </form>
       </CardFooter>

@@ -10,6 +10,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { MagicCard } from "@components/magicui/magic-card";
+import { Button } from "@/components/ui/button";
+import { Github, Discord } from "simple-icons-astro";
 ---
 
 <div
@@ -22,6 +24,16 @@ import { MagicCard } from "@components/magicui/magic-card";
         Welcome to my website! Heres all my projects and thingys all in one.
       </p>
     </CardContent>
+    <CardFooter className="flex justify-between">
+      <Button asChild variant="outline">
+        <a href="https://discord.com/channels/@me/544510731186601984/"
+          >Discord</a
+        >
+      </Button>
+      <Button asChild className="flex justify-between">
+        <a href="https://github.com/lucas11222">Github</a>
+      </Button>
+    </F>
     <CardFooter>
       <p class="text-gray-500 text-right">Made with 💖 - By Lucas11</p>
     </CardFooter>

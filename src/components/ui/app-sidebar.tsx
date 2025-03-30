@@ -1,4 +1,4 @@
-import { ChevronUp, GithubIcon, Home, User2, FileQuestion } from "lucide-react";
+import { ChevronUp, Home, User2, FileQuestion } from "lucide-react";
 import "@/assets/Discord-Symbol-White.svg";
 import {
   Sidebar,
@@ -19,7 +19,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
+import { SiGithub, SiDiscord } from "@icons-pack/react-simple-icons";
 const isEnabled = true;
 const helloworld = [
   {
@@ -33,7 +33,12 @@ const socials = [
   {
     title: "Github",
     url: "https://github.com/lucas11222",
-    icon: GithubIcon,
+    icon: SiGithub,
+  },
+  {
+    title: "Discord",
+    url: " https://discord.com/channels/@me/544510731186601984/",
+    icon: SiDiscord,
   },
 ];
 const projects = [
