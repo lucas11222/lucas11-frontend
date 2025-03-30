@@ -18,7 +18,7 @@ const accessToken = cookies.get("sb-access-token");
 const refreshToken = cookies.get("sb-refresh-token");
 
 if (accessToken && refreshToken) {
-  return redirect("/settings");
+  return redirect("/lucas11/settings");
 }
 export const prerender = false;
 ---
@@ -36,7 +36,7 @@ export const prerender = false;
         >
       </CardHeader>
       <CardContent>
-        <form action="/api/register" method="post">
+        <form action="/lucas11/api/register" method="post">
           <Label htmlFor="email">Email</Label>
           <Input type="email" name="email" id="email" />
           <Label htmlFor="password">Password</Label>
@@ -44,7 +44,7 @@ export const prerender = false;
         </form>
       </CardContent>
       <CardFooter>
-        <form action="/api/register" method="post">
+        <form action="/lucas11/api/register" method="post">
           <Button type="submit" className="">Register</Button>
         </form>
       </CardFooter>

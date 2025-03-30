@@ -35,15 +35,15 @@ export const POST: APIRoute = async ({ request, cookies, redirect }) => {
   });
 
   if (error) {
-    return redirect("/signin");
+    return redirect("/lucas11/signin");
   }
 
   const { access_token, refresh_token } = data.session;
   cookies.set("sb-access-token", access_token, {
-    path: "/",
+    path: "/lucas11/",
   });
   cookies.set("sb-refresh-token", refresh_token, {
-    path: "/",
+    path: "/lucas11/",
   });
-  return redirect("/settings");
+  return redirect("/lucas11/settings");
 };

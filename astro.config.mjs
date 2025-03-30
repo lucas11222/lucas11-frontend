@@ -16,8 +16,9 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  site: 'https://lucas11.vercel.app',
-  
+  site: 'https://lucas11222.github.io',
+  base: 'lucas11',
+
 
   integrations: [react(), sitemap()],
   adapter: vercel()

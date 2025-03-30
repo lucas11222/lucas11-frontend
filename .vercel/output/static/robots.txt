@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://lucas11.vercel.app/sitemap-index.xml
