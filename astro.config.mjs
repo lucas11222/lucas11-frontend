@@ -11,16 +11,16 @@ import mdx from '@astrojs/mdx';
 
 import sitemap from '@astrojs/sitemap';
 
+import cloudflare from '@astrojs/cloudflare';
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  site: 'https://lucas11222.github.io/lucas11-frontend/',
-  base: 'lucas11',
 
-
-  integrations: [react(), sitemap()]
+  integrations: [react(), sitemap()],
+  adapter: cloudflare()
 });
 
 // @ts-ignore

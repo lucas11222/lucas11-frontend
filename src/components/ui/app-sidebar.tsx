@@ -32,7 +32,7 @@ const helloworld = [
 const socials = [
   {
     title: "Github",
-    url: "https://github.com/lucas11222",
+    url: "https://github.com 222",
     icon: SiGithub,
   },
   {
