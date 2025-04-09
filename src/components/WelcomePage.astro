@@ -16,26 +16,29 @@ import { Github, Discord } from "simple-icons-astro";
 
 <div
   class="flex items-center justify-center h-screen w-screen flex-col scrollbar-hide"
+  title="Lucas11 - Welcome"
 >
   <Card>
-    <CardContent className="flex justify-between">
+    <MagicCard>
+      <CardContent className="flex justify-between">
       <Image src={Logo} alt="My profile" width={100} height={100} />
       <p class="w-70 text-right text-[15px]">
         Welcome to my website! Heres all my projects and thingys all in one.
       </p>
-    </CardContent>
+    </MagicCard>
     <CardFooter className="flex justify-between">
       <Button asChild variant="outline">
-        <a href="https://discord.com/channels/@me/544510731186601984/"
-          >Discord</a
-        >
+        <a href="https://discord.com/channels/@me/544510731186601984/">
+          <Discord class="mr-2" /> Discord
+        </a>
       </Button>
-      <Button asChild className="flex justify-between">
-        <a href="https://github.com 222">Github</a>
+      <Button asChild variant="outline">
+        <a href="https://github.com">
+          <Github class="mr-2" /> Github
+        </a>
       </Button>
-    </F>
-    <CardFooter>
-      <p class="text-gray-500 text-right">Made with 💖 - By Lucas11</p>
     </CardFooter>
+    <p class="text-gray-500 text-right">Made with 💖 - By Lucas11</p>
+    </MagicCard>
   </Card>
 </div>

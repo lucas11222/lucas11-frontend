@@ -1,5 +1,4 @@
 ---
-import MySidebar from "@/components/ui/my-sidebar";
 import "@styles/global.css";
 import Posthog from "@components/posthog.astro";
 
@@ -7,22 +6,14 @@ const { title = "Lucas11", ...props } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <title>Lucas11</title>
     <meta name="description" content="Lucas11's Website :)" />
     <meta property="og:title" content="Lucas11" />
     <meta property="og:type" content="website" />
-    <meta property="og:description" content="Lucas11's Website :)" />
-    <meta property="og:image" content="/logo.svg" />
-    <meta
-      name="google-site-verification"
-      content="JO7fFs2whWWX5QLCGXBenEh_tvb41baW0KsQrXyPkDw"
-    />
     <link rel="sitemap" href=" /sitemap-index.xml" />
     <script>
       document.documentElement.classList.add("dark");
@@ -31,8 +22,3 @@ const { title = "Lucas11", ...props } = Astro.props;
     <Posthog />
   </head>
   <body>
-    <MySidebar client:load>
-      <slot />
-    </MySidebar>
-  </body>
-</html>
