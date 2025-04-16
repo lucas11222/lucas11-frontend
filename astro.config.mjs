@@ -14,9 +14,11 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  output: 'server',
+  site: 'https://lucas11222.github.io',
+  base: 'lucas11',
+
+
   integrations: [react(), sitemap()],
-  adapter: cloudflare()
 });
 
 // @ts-ignore
