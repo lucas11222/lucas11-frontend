@@ -1,6 +1,6 @@
 ---
 import "@styles/global.css";
-import Posthog from "@components/posthog.astro";
+//import Posthog from "@components/posthog.astro";
 
 const { title = "Lucas11", ...props } = Astro.props;
 ---
@@ -10,7 +10,6 @@ const { title = "Lucas11", ...props } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <title>Lucas11</title>
     <meta name="description" content="Lucas11's Website :)" />
     <meta property="og:title" content="Lucas11" />
     <meta property="og:type" content="website" />
@@ -19,6 +18,5 @@ const { title = "Lucas11", ...props } = Astro.props;
       document.documentElement.classList.add("dark");
     </script>
     <link rel="sitemap" href=" /sitemap-index.xml" />
-    <Posthog />
   </head>
   <body>
