@@ -1,22 +1,37 @@
 ---
+import MySidebar from "@components/ui/my-sidebar";
 import "@styles/global.css";
-//import Posthog from "@components/posthog.astro";
-
+import Wave from "react-wavify";
 const { title = "Lucas11", ...props } = Astro.props;
 ---
 
 <!doctype html>
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-    <meta name="description" content="Lucas11's Website :)" />
-    <meta property="og:title" content="Lucas11" />
-    <meta property="og:type" content="website" />
-    <link rel="sitemap" href=" /sitemap-index.xml" />
-    <script>
-      document.documentElement.classList.add("dark");
-    </script>
-    <link rel="sitemap" href=" /sitemap-index.xml" />
-  </head>
-  <body>
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" type="image/svg+xml" href="/logo.svg" />
+<meta name="generator" content={Astro.generator} />
+<title>{title}</title>
+<meta name="description" content="Lucas11's Website :)" />
+<meta property="og:title" content="Lucas11" />
+<meta property="og:type" content="website" />
+<link rel="sitemap" href=" /sitemap-index.xml" />
+<script>
+  document.documentElement.classList.add("dark");
+</script>
+<link rel="sitemap" href=" /sitemap-index.xml" />
+
+<body>
+  <MySidebar client:load>
+    <slot />
+    <Wave
+      fill="#f79902"
+      paused={false}
+      style={{ display: "flex" }}
+      options={{
+        height: 10,
+        amplitude: 20,
+        speed: 0.15,
+        points: 3,
+      }}
+    />
+  </MySidebar>
+</body>

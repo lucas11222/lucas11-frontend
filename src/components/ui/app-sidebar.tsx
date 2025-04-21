@@ -53,7 +53,6 @@ export function AppSidebar() {
     <>
       <Sidebar>
         <SidebarHeader>
-          <SidebarTrigger />
           <SidebarMenu>
             <SidebarMenuItem className="flex flex-row justify-center">
               <img

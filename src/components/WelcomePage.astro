@@ -9,22 +9,22 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { MagicCard } from "@components/magicui/magic-card";
-import { Button } from "@/components/ui/button";
-import { Github, Discord } from "simple-icons-astro";
 ---
 
 <div
   class="flex items-center justify-center h-screen w-screen flex-col scrollbar-hide"
 >
   <Card>
-      <CardContent className="flex justify-between">
+    <CardContent className="flex justify-between">
       <Image src={Logo} alt="My profile" width={100} height={100} />
       <p class="w-70 text-right text-[15px]">
         Welcome to my website! Heres all my projects and thingys all in one.
       </p>
-    </MagicCard>
-
-    <p class="text-gray-500 text-right">Made with 💖 - By Lucas11</p>
+    </CardContent>
+    <CardFooter>
+      <p class="text-gray-500 text-right flex">
+        Made with Love - By Lucas11
+      </p>
+    </CardFooter>
   </Card>
 </div>
