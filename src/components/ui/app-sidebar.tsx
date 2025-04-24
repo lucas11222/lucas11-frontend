@@ -1,4 +1,4 @@
-import { ChevronUp, Home, User2, FileQuestion } from "lucide-react";
+import { ChevronUp, Home, User2, FileQuestion, Bookmark } from "lucide-react";
 import "@/assets/Discord-Symbol-White.svg";
 import {
   Sidebar,
@@ -43,9 +43,9 @@ const socials = [
 ];
 const projects = [
   {
-    title: "Empry for now!",
-    url: "/",
-    icon: FileQuestion,
+    title: "Lucas11 Multi-Bookmarket",
+    url: "/projects/lucas11multitool",
+    icon: Bookmark,
   },
 ];
 export function AppSidebar() {
