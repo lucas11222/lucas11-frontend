@@ -1,0 +1,38 @@
+---
+import { Image } from "astro:assets";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout>
+  <div
+    class="flex items-center justify-center h-screen w-screen flex-col scrollbar-hide"
+  >
+    <Card className="w-100">
+      <CardHeader>
+        <CardTitle>Add me on discord!</CardTitle>
+      </CardHeader>
+      <CardFooter className="flex justify-between">
+        <Button id="button">Copy my @ for discord.</Button>
+      </CardFooter>
+      <script type="module">import { textChangeRangeIsUnchanged } from "typescript";
+
+        document.getElementById("button")?.addEventListener("click", (e) => {
+          if (e.currentTarget.id === "button") {
+            navigator.clipboard.writeText(`lucas11.xyz`);
+            e.currentTarget.textContent = "Copied! Go to add friend and paste the @.";
+
+          }
+        });
+      </script>
+    </Card>
+  </div>
+</Layout>
