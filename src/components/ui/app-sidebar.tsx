@@ -37,7 +37,7 @@ const socials = [
   },
   {
     title: "Discord",
-    url: " https://discord.com/channels/@me/544510731186601984/",
+    url: "",
     icon: SiDiscord,
   },
 ];
