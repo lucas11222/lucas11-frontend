@@ -20,7 +20,6 @@ const refreshToken = cookies.get("sb-refresh-token");
 if (accessToken && refreshToken) {
   return redirect("/settings");
 }
-export const prerender = false;
 ---
 
 <Layout title="Lucas11 - Register">
