@@ -49,7 +49,7 @@ const projects = [
   {
     title: "Lucas11's Dev Board",
     url: "/projects/devboard",
-    icon: Zap,
+    icon: Terminal,
   },
   {
     title: "Lucas11's GeometryPad",
@@ -59,7 +59,7 @@ const projects = [
   {
     title: "Lucas11's Keychain",
     url: "/projects/keychain",
-    icon: Terminal,
+    icon: Keyboard,
   },
 ];
 export function AppSidebar() {
