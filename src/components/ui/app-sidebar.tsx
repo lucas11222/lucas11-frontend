@@ -1,5 +1,4 @@
-import { ChevronUp, Home, User2, FileQuestion, Bookmark } from "lucide-react";
-import "@/assets/Discord-Symbol-White.svg";
+import { ChevronUp, Home, User2, FileQuestion, Bookmark, Zap, Keyboard, Terminal } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -46,6 +45,21 @@ const projects = [
     title: "Lucas11 Multi-Bookmarket",
     url: "/projects/lucas11multitool",
     icon: Bookmark,
+  },
+  {
+    title: "Lucas11's Dev Board",
+    url: "/projects/devboard",
+    icon: Zap,
+  },
+  {
+    title: "Lucas11's GeometryPad",
+    url: "/projects/geometrypad",
+    icon: Keyboard,
+  },
+  {
+    title: "Lucas11's Keychain",
+    url: "/projects/keychain",
+    icon: Terminal,
   },
 ];
 export function AppSidebar() {

@@ -1,0 +1,46 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import Board from "@/assets/devboard.png";
+import { Image } from "astro:assets";
+---
+
+<Layout>
+    <div
+    class="flex items-center justify-center h-screen w-screen flex-col scrollbar-hide"
+  >
+  <Card>
+    <CardHeader>
+      <CardTitle>Lucas11's Dev Board</CardTitle>
+      <CardDescription>An fast Dev Board for prototyping and just making projects without soldering every time.</CardDescription>
+    </CardHeader>
+    <CardContent className="flex justify-between">
+        <Image src={Board} alt="The board" width={400} height={400} />
+    </CardContent>
+    <CardContent className="flex justify-between">
+        <p class="text-center text-[15px]">
+            What does it has? It has a RP2350, 0.91 inch OLED display, 4 LEDs and 4 MX switches!
+        </p>
+    </CardContent>
+    <CardContent className="flex justify-between">
+        <Button id="github">Go to the Github</Button>
+    </CardContent>
+  </Card>
+  </div>
+  <script type="module">
+            document.getElementById("github")?.addEventListener("click", (e) => {
+            if (e.currentTarget.id === "github") {
+                window.location.href = "https://github.com/lucas11222/Lucas11-Dev-Board";
+            }
+        });
+  </script>
+</Layout>

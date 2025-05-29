@@ -1,0 +1,48 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import FrontBoard from "@/assets/keychain-front.png";
+import BackBoard from "@/assets/keychain-back.png";
+import { Image } from "astro:assets";
+---
+
+<Layout>
+    <div
+    class="flex items-center justify-center h-screen w-screen flex-col scrollbar-hide"
+  >
+  <Card>
+    <CardHeader>
+      <CardTitle>Lucas11's Keychain.</CardTitle>
+      <CardDescription>An keychain for my house keys.</CardDescription>
+    </CardHeader>
+    <CardContent className="flex justify-between">
+        <Image src={FrontBoard} alt="The front board" width={200} height={200} />
+        <Image src={BackBoard} alt="The back board" width={200} height={200} />
+    </CardContent>
+    <CardContent className="flex justify-between">
+        <p class="text-center text-[15px]">
+            What does it has? It just an keychain with a happy led face.
+        </p>
+    </CardContent>
+    <CardContent className="flex justify-between">
+        <Button id="github">Go to the Github</Button>
+    </CardContent>
+  </Card>
+  </div>
+  <script type="module">
+            document.getElementById("github")?.addEventListener("click", (e) => {
+            if (e.currentTarget.id === "github") {
+                window.location.href = "https://github.com/lucas11222/Lucas11-Keychain";
+            }
+        });
+  </script>
+</Layout>
