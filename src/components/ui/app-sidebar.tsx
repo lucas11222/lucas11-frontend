@@ -82,7 +82,7 @@ export function AppSidebar() {
             <a href="https://lucas11.dev/"> <img
                 src="/button.png"
                 width={120}
-                height={120}
+                height={60}
                 alt="ad button"
               /></a>
             </SidebarMenuItem>
