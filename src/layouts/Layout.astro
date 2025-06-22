@@ -1,7 +1,6 @@
 ---
 import MySidebar from "@components/ui/my-sidebar";
 import "@styles/global.css";
-import Wave from "react-wavify";
 const { title = "Lucas11", ...props } = Astro.props;
 ---
 
@@ -22,16 +21,5 @@ const { title = "Lucas11", ...props } = Astro.props;
 <body>
   <MySidebar client:load>
     <slot />
-    <Wave
-      fill="#f79902"
-      paused={false}
-      style={{ display: "flex" }}
-      options={{
-        height: 10,
-        amplitude: 20,
-        speed: 0.15,
-        points: 3,
-      }}
-    />
   </MySidebar>
 </body>
