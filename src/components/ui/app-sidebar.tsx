@@ -77,6 +77,16 @@ export function AppSidebar() {
               />
             </SidebarMenuItem>
           </SidebarMenu>
+          <SidebarMenu>
+            <SidebarMenuItem className="flex flex-row justify-center">
+            <a href="https://lucas11.dev/"> <img
+                src="/button.png"
+                width={120}
+                height={120}
+                alt="ad button"
+              /></a>
+            </SidebarMenuItem>
+          </SidebarMenu>
         </SidebarHeader>
 
         <SidebarContent>
