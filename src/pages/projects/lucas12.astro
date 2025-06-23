@@ -1,0 +1,47 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import Logo from "@/assets/lucas12.png";
+import { Image } from "astro:assets";
+---
+
+<Layout>
+    <div
+    class="flex items-center justify-center h-screen w-screen flex-col scrollbar-hide"
+  >
+  <Card>
+    <CardHeader>
+      <CardTitle>Lucas12</CardTitle>
+      <CardDescription>An slack bot for Stats.</CardDescription>
+    </CardHeader>
+    <CardContent className="flex justify-between">
+        <Image src={Logo} alt="The Bot Logo." width={100} height={100} />
+    </CardContent>
+    <CardContent className="flex justify-between">
+        <p class="text-center text-[15px]">
+            Its a bot for Hack Club for stats from pokemon and GD.
+        </p>
+    </CardContent>
+    <CardContent className="flex justify-between">
+        <Button id="github">Go to the Github</Button>
+        <a href="https://slack.com/oauth/v2/authorize?client_id=2210535565.8924570383142&scope=channels:history,chat:write,commands,groups:history,im:history,mpim:history,users:read,files:read,files:write&user_scope="><img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" /></a>
+    </CardContent>
+  </Card>
+  </div>
+  <script type="module">
+            document.getElementById("github")?.addEventListener("click", (e) => {
+            if (e.currentTarget.id === "github") {
+                window.location.href = "https://github.com/lucas11222/lucas12";
+            }
+        });
+  </script>
+</Layout>

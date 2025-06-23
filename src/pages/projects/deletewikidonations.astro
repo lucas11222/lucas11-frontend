@@ -1,0 +1,43 @@
+---
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout>
+  <div
+    class="flex items-center justify-center h-screen w-screen flex-col scrollbar-hide"
+  >
+    <Card className="w-100">
+      <CardHeader>
+        <CardTitle>Delete-WikiDonations</CardTitle>
+        <CardDescription className="w-70 text-[15px]"
+          >An user script for deleting all the donation popups in Wikipedia.</CardDescription
+        >
+      </CardHeader>
+      <CardFooter className="flex justify-between gap-1">
+        <Button id="button">Open the project's Greasy fork</Button>
+        <Button id="button2">Open the Github</Button>
+      </CardFooter>
+      <script type="module">
+        document.getElementById("button")?.addEventListener("click", (e) => {
+          if (e.currentTarget.id === "button") {
+            window.location.href = "https://greasyfork.org/en/scripts/477658-delete-wikidonations";
+          }
+        });
+        document.getElementById("button2")?.addEventListener("click", (e) => {
+          if (e.currentTarget.id === "button2") {
+            window.location.href = "https://github.com/lucas11222/Delete-WikiDonations";
+          }
+        });
+      </script>
+    </Card>
+  </div>
+</Layout>

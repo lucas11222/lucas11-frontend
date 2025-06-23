@@ -1,4 +1,4 @@
-import { ChevronUp, Home, User2, FileQuestion, Bookmark, Zap, Keyboard, Terminal } from "lucide-react";
+import { ChevronUp, Home, User2, FileQuestion, Bookmark, Bot, Book, Zap, Keyboard, Terminal } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -42,6 +42,11 @@ const socials = [
 ];
 const projects = [
   {
+    title: "Index",
+    url: "/projects",
+    icon: Book,
+  },
+  {
     title: "Lucas11 Multi-Bookmarket",
     url: "/projects/lucas11multitool",
     icon: Bookmark,
@@ -50,6 +55,11 @@ const projects = [
     title: "Lucas11's Dev Board",
     url: "/projects/devboard",
     icon: Terminal,
+  },
+  {
+    title: "Lucas12",
+    url: "/projects/lucas12",
+    icon: Bot,
   },
   {
     title: "Lucas11's GeometryPad",
