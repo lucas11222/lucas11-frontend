@@ -1,9 +1,6 @@
 ---
-import { Image } from "astro:assets";
 import {
   Card,
-  CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -23,7 +20,7 @@ import Layout from "@layouts/Layout.astro";
       <CardFooter className="flex justify-between">   
         <Button id="button">Copy my @ for discord.</Button>
       </CardFooter>
-      <script type="module">import { textChangeRangeIsUnchanged } from "typescript";
+      <script type="module">
 
         document.getElementById("button")?.addEventListener("click", (e) => {
           if (e.currentTarget.id === "button") {

@@ -1,0 +1,46 @@
+---
+import {
+  Card,
+  CardContent,
+CardDescription,
+CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@components/ui/button";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Lucas11 - CDN">
+    <div
+  class="flex items-center justify-center h-screen w-screen flex-col scrollbar-hide"
+>
+  <Card className="w-140">
+    <CardTitle className="text-center">Lucas11's CDN</CardTitle>
+    <CardDescription className="text-center">
+        Heres all my public files (pictures, videos and more) in the internet!
+    </CardDescription>
+    <CardContent className="flex justify-between gap-1">
+        <Button id="xo">Xo image (for a bot)</Button>
+        <Button id="golden">Cmon the golden?</Button>
+        <Button id="notfound">Not found image (for a bot)</Button>
+    </CardContent>
+    <script type="module">
+        document.getElementById("xo")?.addEventListener("click", (e) => {
+            if (e.currentTarget.id === "xo") {
+            window.location.href = "https://lucas11.com/cdn/xo.png";
+            }
+        });
+        document.getElementById("golden")?.addEventListener("click", (e) => {
+            if (e.currentTarget.id === "golden") {
+            window.location.href = "https://lucas11.com/cdn/golden.png";
+            }
+        });
+        document.getElementById("notfound")?.addEventListener("click", (e) => {
+            if (e.currentTarget.id === "notfound") {
+            window.location.href = "https://lucas11.com/cdn/null.png";
+            }
+        });
+    </script>
+  </Card>
+</div>
+
+</Layout>

@@ -1,4 +1,4 @@
-import { ChevronUp, Home, User2, FileQuestion, Bookmark, Bot, Book, Zap, Keyboard, Terminal } from "lucide-react";
+import { ChevronUp, Home, User2, FileQuestion, Anchor, Bookmark, Bot, Book, Zap, Keyboard, Terminal } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -25,6 +25,11 @@ const helloworld = [
     title: "Home",
     url: "/",
     icon: Home,
+  },
+  {
+    title: "CDN",
+    url: "/cdn",
+    icon: Anchor,
   },
 ];
 
