@@ -1,0 +1,30 @@
+---
+import {
+  Card,
+  CardContent,
+CardDescription,
+CardTitle,
+} from "@/components/ui/card";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Lucas11 - CDN">
+    <div
+  class="flex items-center justify-center h-screen w-screen flex-col scrollbar-hide"
+>
+  <Card>
+    <CardTitle>Lucas11's CDN</CardTitle>
+    <CardDescription>
+        Heres all my public files (pictures, videos and more) in the internet!
+    </CardDescription>
+    <CardContent className="flex justify-between">
+        <p class="w-70 text-right text-[12px]">
+        <a href="/cdn/xo.jpg">Xo image (for a bot)</a>
+        <a href="/cdn/golden.mp4">Cmon the golden?</a>
+        <a href="/cdn/null.jpg">If the bot dosent find the avatar (for a bot)</a>
+      </p>
+    </CardContent>
+  </Card>
+</div>
+
+</Layout>
