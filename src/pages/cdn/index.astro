@@ -14,8 +14,8 @@ import Layout from "@layouts/Layout.astro";
   class="flex items-center justify-center h-screen w-screen flex-col scrollbar-hide"
 >
   <Card className="w-140">
-    <CardTitle className="text-center">Lucas11's CDN</CardTitle>
-    <CardDescription className="text-center">
+    <CardTitle className="text-center" id="text">Lucas11's CDN</CardTitle>
+    <CardDescription className="text-center" id="text">
         Heres all my public files (pictures, videos and more) in the internet!
     </CardDescription>
     <CardContent className="flex justify-between gap-1">
@@ -23,22 +23,33 @@ import Layout from "@layouts/Layout.astro";
         <Button id="golden">Cmon the golden?</Button>
         <Button id="notfound">Not found image (for a bot)</Button>
     </CardContent>
-    <script type="module">
+    <script>
+      import { gsap } from "gsap";
+      import { SplitText } from "gsap/SplitText";
+      gsap.registerPlugin(SplitText);
         document.getElementById("xo")?.addEventListener("click", (e) => {
-            if (e.currentTarget.id === "xo") {
-            window.location.href = "https://lucas11.com/cdn/xo.png";
-            }
+            window.location.href = "https://lucas11.dev/cdn/xo.jpg";
+
         });
         document.getElementById("golden")?.addEventListener("click", (e) => {
-            if (e.currentTarget.id === "golden") {
-            window.location.href = "https://lucas11.com/cdn/golden.png";
-            }
+            window.location.href = "https://lucas11.dev/cdn/golden.mp4";
+
         });
         document.getElementById("notfound")?.addEventListener("click", (e) => {
-            if (e.currentTarget.id === "notfound") {
-            window.location.href = "https://lucas11.com/cdn/null.png";
-            }
+            window.location.href = "https://lucas11.dev/cdn/null.png";
         });
+        let split = SplitText.create("#text", {
+      type: "words, chars", // only split into words and lines (not characters)
+      mask: "words", // adds extra wrapper element around lines with overflow: clip (v3.13.0+)
+     // there are many other options - see below for a complete list
+    });
+    gsap.from(split.words, {
+    y: 100,
+    opacity: 0.2,
+    duration: 0.2,
+    ease: "power4",
+    stagger: 0.1
+  })
     </script>
   </Card>
 </div>

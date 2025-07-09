@@ -18,9 +18,9 @@ import { Image } from "astro:assets";
     class="flex items-center justify-center h-screen w-screen flex-col scrollbar-hide"
   >
   <Card>
-    <CardHeader>
-      <CardTitle>Lucas11's GeometryPad</CardTitle>
-      <CardDescription>An <a href="https://hackpad.hackclub.com/">Hackpad</a> for the popular game Geometry dash. (i love gd colonge) (Highway Project)</CardDescription>
+    <CardHeader id="text">
+      <CardTitle id="text">Lucas11's GeometryPad</CardTitle>
+      <CardDescription id="text">An <a href="https://hackpad.hackclub.com/">Hackpad</a> for the popular game Geometry dash. (i love gd colonge) (Highway Project)</CardDescription>
     </CardHeader>
     <CardContent className="flex justify-between">
         <Image src={Board} alt="The board" width={400} height={400} />
@@ -35,11 +35,26 @@ import { Image } from "astro:assets";
     </CardContent>
   </Card>
   </div>
-  <script type="module">
+  <script >
             document.getElementById("github")?.addEventListener("click", (e) => {
-            if (e.currentTarget.id === "github") {
                 window.location.href = "https://github.com/lucas11222/Lucas11-GeometryPad";
-            }
+
         });
+        import { gsap } from "gsap";
+    import { TextPlugin } from "gsap/TextPlugin";
+    import { SplitText } from "gsap/SplitText";
+    gsap.registerPlugin(TextPlugin , SplitText);
+    let split = SplitText.create("#text", {
+      type: "words, chars", // only split into words and lines (not characters)
+      mask: "words", // adds extra wrapper element around lines with overflow: clip (v3.13.0+)
+     // there are many other options - see below for a complete list
+    });
+    gsap.from(split.words, {
+    y: 100,
+    opacity: 0.2,
+    duration: 0.1,
+    ease: "power4",
+    stagger: 0.1
+  })
   </script>
 </Layout>

@@ -11,17 +11,45 @@ import {
 <div
   class="flex items-center justify-center h-screen w-screen flex-col scrollbar-hide"
 >
-  <Card>
-    <CardContent className="flex justify-between">
-      <Image src={Logo} alt="My profile" width={100} height={100} />
-      <p class="w-70 text-right text-[15px]">
-        Welcome to my website! Heres all my projects and thingys all in one.
-      </p>
-    </CardContent>
-    <CardFooter>
-      <p class="text-gray-500 text-right flex">
-        Made with Love - By Lucas11
-      </p>
-    </CardFooter>
-  </Card>
+    <Card>
+      <CardContent className="flex justify-between">
+        <Image src={Logo} alt="My profile" class="profile" width={100} height={100} />
+        <p class="w-70 text-right text-[15px]" id="welcome-text">
+          Welcome to my website! Heres all my projects and thingys all in one.
+        </p>
+      </CardContent>
+      <CardFooter>
+        <p class="text-gray-500 text-right flex">
+          Made with Love - By Lucas11
+        </p>
+      </CardFooter>
+
+    </Card>
+  <script>
+    import { gsap } from "gsap";
+    import { SplitText } from "gsap/SplitText";
+    gsap.registerPlugin(SplitText);
+    //all tweens run in direct succession
+    let iconanimation  = gsap.timeline({
+      repeat: -1,
+      yoyo: true
+    });
+    iconanimation.to(".profile", {duration: 1, y: -8, ease: "power2.inOut"})
+    .to(".profile", {duration: 1, y: 8, ease: "power2.inOut"})
+    let split = SplitText.create("#welcome-text", {
+      type: "words, chars", // only split into words and lines (not characters)
+      mask: "words", // adds extra wrapper element around lines with overflow: clip (v3.13.0+)
+     // there are many other options - see below for a complete list
+    });
+    gsap.from(split.words, {
+    y: 100,
+    opacity: 0.2,
+    duration: 0.2,
+    ease: "power4",
+    stagger: 0.1
+  })
+
+    // create the scrollSmoother before your scrollTriggers
+    //draws all elements with the "draw-me" class applied with staggered start times 0.1 seconds apart
+    </script>
 </div>

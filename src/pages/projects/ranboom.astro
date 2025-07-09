@@ -1,6 +1,7 @@
 ---
 import {
   Card,
+  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -15,17 +16,29 @@ import Layout from "@layouts/Layout.astro";
   >
     <Card className="w-100">
       <CardHeader>
-        <CardTitle>Add me on discord!</CardTitle>
+        <CardTitle id="text">RanBoom</CardTitle>
+        <CardDescription id="text" className="w-70 text-[15px]"
+          >An website that you press an button and it has 1 of 1000 that the website deletes itself.</CardDescription
+        >
       </CardHeader>
-      <CardFooter className="flex justify-between">   
-        <Button id="button">Copy my @ for discord.</Button>
+      <CardFooter className="flex justify-between gap-1">
+        <Button id="button">Open the website!</Button>
+        <Button id="button2">Open the Github</Button>
       </CardFooter>
-      <script type="module">
-                import { gsap } from "gsap";
+      <script>
+        document.getElementById("button")?.addEventListener("click", (e) => {
+            window.location.href = "https://ranboom.altamiranolucas2013.workers.dev/";
+
+        });
+        document.getElementById("button2")?.addEventListener("click", (e) => {
+            window.location.href = "https://github.com/lucas11222/RanBoom";
+
+        });
+        import { gsap } from "gsap";
     import { TextPlugin } from "gsap/TextPlugin";
     import { SplitText } from "gsap/SplitText";
     gsap.registerPlugin(TextPlugin , SplitText);
-                let split = SplitText.create("#text", {
+    let split = SplitText.create("#text", {
       type: "words, chars", // only split into words and lines (not characters)
       mask: "words", // adds extra wrapper element around lines with overflow: clip (v3.13.0+)
      // there are many other options - see below for a complete list
@@ -37,13 +50,6 @@ import Layout from "@layouts/Layout.astro";
     ease: "power4",
     stagger: 0.1
   })
-        document.getElementById("button")?.addEventListener("click", (e) => {
-          if (e.currentTarget.id === "button") {
-            navigator.clipboard.writeText(`lucas11.xyz`);
-            e.currentTarget.textContent = "Copied! Go to add friend and paste the @.";
-
-          }
-        });
       </script>
     </Card>
   </div>

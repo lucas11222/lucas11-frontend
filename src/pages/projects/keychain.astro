@@ -19,8 +19,8 @@ import { Image } from "astro:assets";
   >
   <Card>
     <CardHeader>
-      <CardTitle>Lucas11's Keychain.</CardTitle>
-      <CardDescription>An keychain for my house keys. (Highway Project)</CardDescription>
+      <CardTitle id="text">Lucas11's Keychain.</CardTitle>
+      <CardDescription id="text">An keychain for my house keys. (Highway Project)</CardDescription>
     </CardHeader>
     <CardContent className="flex justify-between">
         <Image src={FrontBoard} alt="The front board" width={200} height={200} />
@@ -36,11 +36,26 @@ import { Image } from "astro:assets";
     </CardContent>
   </Card>
   </div>
-  <script type="module">
+  <script >
             document.getElementById("github")?.addEventListener("click", (e) => {
-            if (e.currentTarget.id === "github") {
                 window.location.href = "https://github.com/lucas11222/Lucas11-Keychain";
-            }
+
         });
+        import { gsap } from "gsap";
+    import { TextPlugin } from "gsap/TextPlugin";
+    import { SplitText } from "gsap/SplitText";
+    gsap.registerPlugin(TextPlugin , SplitText);
+    let split = SplitText.create("#text", {
+      type: "words, chars", // only split into words and lines (not characters)
+      mask: "words", // adds extra wrapper element around lines with overflow: clip (v3.13.0+)
+     // there are many other options - see below for a complete list
+    });
+    gsap.from(split.words, {
+    y: 100,
+    opacity: 0.2,
+    duration: 0.2,
+    ease: "power4",
+    stagger: 0.1
+  })
   </script>
 </Layout>

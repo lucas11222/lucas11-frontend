@@ -1,4 +1,4 @@
-import { ChevronUp, Home, User2, FileQuestion, Anchor, Bookmark, Bot, Book, Zap, Keyboard, Terminal } from "lucide-react";
+import { ChevronUp, Home, User2, FileQuestion, HandCoins, Anchor, Bookmark, Bot, Book, Zap, Keyboard, Terminal, BombIcon } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -19,7 +19,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { SiGithub, SiDiscord } from "@icons-pack/react-simple-icons";
-const isEnabled = true;
 const helloworld = [
   {
     title: "Home",
@@ -76,6 +75,18 @@ const projects = [
     url: "/projects/keychain",
     icon: Keyboard,
   },
+  {
+    title: "Delete-WikiDonations",
+    url: "/projects/deletewikidonations",
+    icon: HandCoins,
+  },
+  {
+    title: "RanBoom",
+    url: "/projects/ranboom",
+    icon: BombIcon,
+  },
+
+
 ];
 export function AppSidebar() {
   return (
@@ -89,6 +100,7 @@ export function AppSidebar() {
                 width={120}
                 height={120}
                 alt="Author avatar"
+                id="profile"
               />
             </SidebarMenuItem>
           </SidebarMenu>

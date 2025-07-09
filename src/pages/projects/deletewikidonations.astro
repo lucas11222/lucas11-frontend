@@ -16,8 +16,8 @@ import Layout from "@layouts/Layout.astro";
   >
     <Card className="w-100">
       <CardHeader>
-        <CardTitle>Delete-WikiDonations</CardTitle>
-        <CardDescription className="w-70 text-[15px]"
+        <CardTitle id="text">Delete-WikiDonations</CardTitle>
+        <CardDescription id="text" className="w-70 text-[15px]"
           >An user script for deleting all the donation popups in Wikipedia.</CardDescription
         >
       </CardHeader>
@@ -25,17 +25,31 @@ import Layout from "@layouts/Layout.astro";
         <Button id="button">Open the project's Greasy fork</Button>
         <Button id="button2">Open the Github</Button>
       </CardFooter>
-      <script type="module">
+      <script>
         document.getElementById("button")?.addEventListener("click", (e) => {
-          if (e.currentTarget.id === "button") {
             window.location.href = "https://greasyfork.org/en/scripts/477658-delete-wikidonations";
-          }
+
         });
         document.getElementById("button2")?.addEventListener("click", (e) => {
-          if (e.currentTarget.id === "button2") {
             window.location.href = "https://github.com/lucas11222/Delete-WikiDonations";
-          }
+
         });
+        import { gsap } from "gsap";
+    import { TextPlugin } from "gsap/TextPlugin";
+    import { SplitText } from "gsap/SplitText";
+    gsap.registerPlugin(TextPlugin , SplitText);
+    let split = SplitText.create("#text", {
+      type: "words, chars", // only split into words and lines (not characters)
+      mask: "words", // adds extra wrapper element around lines with overflow: clip (v3.13.0+)
+     // there are many other options - see below for a complete list
+    });
+    gsap.from(split.words, {
+    y: 100,
+    opacity: 0.2,
+    duration: 0.2,
+    ease: "power4",
+    stagger: 0.1
+  })
       </script>
     </Card>
   </div>
